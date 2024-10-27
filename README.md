@@ -65,7 +65,9 @@ The gene-specific positive selection score in output file `TBEV.gene_summary.txt
 A sample dataset for testing the bash script (gzipped FASTQ R1 and R2 files containing 2,500 reads) can be downloaded [here](https://github.com/chandranlab/mittler_2024/tree/main/demo_fastq_files).
 
 A raw CRISPR/Cas9 screen dataset from [Kulsuptrakul et al.](https://doi.org/10.1016/j.celrep.2021.108859) was used for testing the mageck subcommands and is available for download on [EBI ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-8646). 
+
 ---
+
 ### B. CellProfiler analysis of immunofluorescence microscopy images
 
 #### Hardware, operating systen, software
