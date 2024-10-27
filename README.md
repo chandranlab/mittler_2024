@@ -71,16 +71,20 @@ A raw CRISPR/Cas9 screen dataset from [Kulsuptrakul et al.](https://doi.org/10.1
 #### Hardware, operating systen, software
 - Mac (arm64)
 - Mac OS v14.6.1 (Sonoma)
-- CellProfiler v4.2.6 (available [here](https://cellprofiler.org/)
+- CellProfiler v4.2.6 (available [here](https://cellprofiler.org/))
 
 #### Data acquisition
-Experiments to detect and measure TBEV attachment and internalization into A549 cells was performed, cells were fluorescently labeled for plasma membrane glycans (wheat germ aggluttinin (WGA)), TBEV glycoprotein E, and nuclei. Cells were visualized by confocal microscopy, and fields containing cells were captured in three fluorescent channels: WGA - red, E - green, nuclei - blue. See Mittler et al. for details.
+Experiments to detect and measure TBEV attachment and internalization into A549 cells was performed, cells were fluorescently labeled for plasma membrane glycans (wheat germ aggluttinin (WGA)), TBEV glycoprotein E, and nuclei. 
+
+Cells were visualized by confocal microscopy, and fields containing cells were captured in three fluorescent channels: WGA - red, E - green, nuclei - blue. 
+
+See Mittler et al. for details.
 
 #### CellProfiler analysis
 
 See the [Cellprofiler website](https://cellprofiler.org/) for documentation.
 
-The custom CellProfiler pipeline used in this study is available [here]().
+The custom CellProfiler pipeline used in this study is available [here](https://github.com/chandranlab/mittler_2024/blob/main/cell_fluorescent_puncta_count.cpproj).
 
 A sample image (Nikon nd2 format) containing the three fluorescent channels above is available [here]().
 
