@@ -66,7 +66,27 @@ A sample dataset for testing the bash script (gzipped FASTQ R1 and R2 files cont
 
 A raw CRISPR/Cas9 screen dataset from [Kulsuptrakul et al.](https://doi.org/10.1016/j.celrep.2021.108859) was used for testing the mageck subcommands and is available for download on [EBI ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-8646). 
 
+### B. CellProfiler analysis of immunofluorescence microscopy images
 
+#### Hardware, operating systen, software
+- Mac (arm64)
+- Mac OS v14.6.1 (Sonoma)
+- CellProfiler v4.2.6 (available [here](https://cellprofiler.org/)
+
+#### Data acquisition
+Experiments to detect and measure TBEV attachment and internalization into A549 cells was performed, cells were fluorescently labeled for plasma membrane glycans (wheat germ aggluttinin (WGA)), TBEV glycoprotein E, and nuclei. Cells were visualized by confocal microscopy, and fields containing cells were captured in three fluorescent channels: WGA - red, E - green, nuclei - blue. See Mittler et al. for details.
+
+#### CellProfiler analysis
+
+See the [Cellprofiler website](https://cellprofiler.org/) for documentation.
+
+The custom CellProfiler pipeline used in this study is available [here]().
+
+A sample image (Nikon nd2 format) containing the three fluorescent channels above is available [here]().
+
+Cells were segmented according to nuclei (primary objects) and WGA (secondary objects).
+
+Cell-associated fluorescent E puncta were segmented as primary objects, enumerated, and assigned as child objects to Cells.
 
 
 
