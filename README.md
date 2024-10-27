@@ -27,8 +27,8 @@ Amplicons containing single-guide RNA (sgRNA) sequences were prepared from the g
 7. tbev-rep2_R1.fastq
 8. tbev-rep2_R2.fastq
 
-rep = replicate
-R1 = P7 read
+rep = replicate, 
+R1 = P7 read, 
 R2 = P5 read
 
 #### Read structure
