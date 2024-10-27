@@ -47,7 +47,7 @@ Launch mageck count from Terminal command line to determine sgRNA readcounts in 
 
 `mageck count -l Human_GeCKOv2_Library_combine.csv --fastq control_rep1_reoriented_R1.fastq control_rep2_reoriented_R1.fastq TBEV_rep1_reoriented_R1.fastq TBEV_rep2_reoriented_R1.fastq --norm-method median -n tbev_screen --unmapped-to-file --sample-label control1,control2,tbev1,tbev2`
 
-`Library file containing Gecko-v2 sgRNA sequences is available [here].
+Library file containing Gecko-v2 sgRNA sequences is available [here](https://github.com/chandranlab/mittler_2024/blob/main/Human_GeCKOv2_Library_combine.csv).
 
 Output file `tbev_screen.count.txt` containing sgRNA readcounts for each sample is used as input for `mageck test`.
 
