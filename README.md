@@ -32,7 +32,7 @@ R1 = P7 read,
 R2 = P5 read
 
 #### Read structure
-<img width="1256" alt="Screenshot 2024-10-27 at 12 27 04 AM" src="https://github.com/user-attachments/assets/61aa1073-c2bd-4813-9a7f-0b16caaa796e">
+<img width="1256" alt="Screenshot 2024-10-27 at 9 27 45 AM" src="https://github.com/user-attachments/assets/a3114525-5088-4117-8189-991ae055bf35">
 
 #### Reorienting reads with `pooled_CRISPR_screen_Gecko_v2_reorient.sh`
 Because adapter ligation is orientation-independent, the R1 and R2 read files for each sample are expected to contain ~50% of the 'forward' reads of interest (containing the sgRNA sequence). 
