@@ -45,7 +45,9 @@ See [mageck count](https://sourceforge.net/p/mageck/wiki/usage/#count) for docum
 
 Launch mageck count from Terminal command line to determine sgRNA readcounts in each fileset as follows:
 
-`mageck count -l /Users/kartik/ncbi/crispr_screens_TBEV/TBEV/Human_GeCKOv2_Library_combine.csv --fastq control_rep1_reoriented_R1.fastq control_rep2_reoriented_R1.fastq TBEV_rep1_reoriented_R1.fastq TBEV_rep2_reoriented_R1.fastq --norm-method median -n tbev_screen --unmapped-to-file --sample-label control1,control2,tbev1,tbev2`
+`mageck count -l Human_GeCKOv2_Library_combine.csv --fastq control_rep1_reoriented_R1.fastq control_rep2_reoriented_R1.fastq TBEV_rep1_reoriented_R1.fastq TBEV_rep2_reoriented_R1.fastq --norm-method median -n tbev_screen --unmapped-to-file --sample-label control1,control2,tbev1,tbev2`
+
+`Library file containing Gecko-v2 sgRNA sequences is available [here].
 
 Output file `tbev_screen.count.txt` containing sgRNA readcounts for each sample is used as input for `mageck test`.
 
@@ -54,7 +56,7 @@ See [mageck test](https://sourceforge.net/p/mageck/wiki/usage/#test) for documen
 
 Launch mageck test from Terminal to rank sgRNAs and genes based on the read count table provided:
 
-`mageck test -k /Users/kartik/ncbi/crispr_screens_TBEV/TBEV/reoriented_reads/tbev_screen.count.txt -t 2,3 -c 0,1 -n TBEV --norm-method median --pdf-report`
+`mageck test -k tbev_screen.count.txt -t 2,3 -c 0,1 -n TBEV --norm-method median --pdf-report`
 
 The gene-specific positive selection score in output file `TBEV.gene_summary.txt` was used to identify gene hits (see the manuscript).
 
