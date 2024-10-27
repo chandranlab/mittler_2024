@@ -86,7 +86,7 @@ See the [Cellprofiler website](https://cellprofiler.org/) for documentation.
 
 The custom CellProfiler pipeline used in this study is available [here](https://github.com/chandranlab/mittler_2024/blob/main/cell_fluorescent_puncta_count.cpproj).
 
-A sample image (Nikon nd2 format) containing the three fluorescent channels above is available [here]().
+A sample image (Nikon nd2 format) containing the three fluorescent channels above is available [here](https://github.com/chandranlab/mittler_2024/blob/main/sample_image.nd2).
 
 Cells were segmented according to nuclei (primary objects) and WGA (secondary objects).
 
