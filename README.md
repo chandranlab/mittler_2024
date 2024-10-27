@@ -59,7 +59,7 @@ The gene-specific positive selection score in output file `TBEV.gene_summary.txt
 
 #### Demo dataset
 
-A sample dataset with FASTQ files containing 10,000 reads can be downloaded [here](https://github.com/chandranlab/mittler_2024#:~:text=last%20month-,README.md,-Update%20README.md).
+A sample dataset with gzipped FASTQ files containing 10,000 reads can be downloaded [here](https://github.com/chandranlab/mittler_2024#:~:text=last%20month-,README.md,-Update%20README.md).
 
 
 
