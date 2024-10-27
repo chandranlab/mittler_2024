@@ -1,8 +1,67 @@
-# Workflow for analysis of CRISPR/Cas9 screens
+# Workflows
 ---
-## Published in Mittler et al., ...
+## Published in Mittler et al.
+### A. Analysis of CRISPR/Cas9 screen
 
-This workflow 
+#### Hardware, operating systen, software
+- Mac (arm64)
+- Mac OS v14.6.1 (Sonoma)
+- Terminal v2.14
+- GNU bash v3.2.57(1)-release (arm64-apple-darwin23)
+- mageck v0.5.9.5 (available [here](https://sourceforge.net/p/mageck/wiki/Home/))
+  
+#### Data acquisition
+A genome-scale CRISPR/Cas9 cell-survival screen for tick-borne encephalitis virus (TBEV) dependency factors was performed as described in Mittler et al.
+
+A549 cells transduced with a lentiviral pool encoding the [Gecko-v2 CRISPR/Cas9-based gene inactivation library](https://www.addgene.org/pooled-library/zhang-human-gecko-v2/) were either left untreated or exposed to TBEV. The surviving cells were expanded and their genomic DNA was isolated. Experiments were performed in biological duplicate, to yield 4 samples (control-rep1, TBEV-rep1, control-rep2, TBEV-rep2). 
+
+Amplicons containing single-guide RNA (sgRNA) sequences were prepared from the genomic gDNA and ligated to Illumina adapters. Libraries were pooled and sequenced on the Illumina NextSeq 500 (2x150 bp, paired-end mode). FASTQ files were dumultiplexed and processed for removal of technical adapter sequences.
+
+#### Input data files
+1. control-rep1_R1.fastq
+2. control-rep1_R2.fastq
+3. tbev-rep1_R1.fastq
+4. tbev-rep1_R2.fastq
+5. control-rep2_R1.fastq
+6. control-rep2_R2.fastq
+7. tbev-rep2_R1.fastq
+8. tbev-rep2_R2.fastq
+
+rep = replicate
+R1 = P7 read
+R2 = P5 read
+
+#### Read structure
+<img width="1256" alt="Screenshot 2024-10-27 at 12 27 04 AM" src="https://github.com/user-attachments/assets/61aa1073-c2bd-4813-9a7f-0b16caaa796e">
+
+#### Reorienting reads with `pooled_CRISPR_screen_Gecko_v2_reorient.sh`
+Because adapter ligation is orientation-independent, the R1 and R2 read files for each sample are expected to contain ~50% of the 'forward' reads of interest (containing the sgRNA sequence). 
+
+The bash script `pooled_CRISPR_screen_Gecko_v2_reorient.sh` extracts reads from the R1 and R2 FASTQ files that are in the desired forward orientation and compiles them into a new `_reoriented_R1.fastq` file. Reverse reads only contain sgRNA scaffold and lentiviral framework sequences and are discarded.
+
+#### Running `mageck count`
+
+See [mageck count](https://sourceforge.net/p/mageck/wiki/usage/#count) for documentation. 
+
+Launch mageck count from Terminal to determine sgRNA readcounts in each fileset as follows:
+
+`mageck count -l /Users/kartik/ncbi/crispr_screens_TBEV/TBEV/Human_GeCKOv2_Library_combine.csv --fastq control_rep1_reoriented_R1.fastq control_rep2_reoriented_R1.fastq TBEV_rep1_reoriented_R1.fastq TBEV_rep2_reoriented_R1.fastq --norm-method median -n tbev_screen --unmapped-to-file --sample-label control1,control2,tbev1,tbev2`
+
+Output file `tbev_screen.count.txt` containing sgRNA readcounts for each sample is used as input for `mageck test`.
+
+#### Running `mageck test`
+See [mageck test](https://sourceforge.net/p/mageck/wiki/usage/#test) for documentation. 
+
+Launch mageck test from Terminal to rank sgRNAs and genes based on the read count table provided:
+`mageck test -k /Users/kartik/ncbi/crispr_screens_TBEV/TBEV/reoriented_reads/tbev_screen.count.txt -t 2,3 -c 0,1 -n TBEV --norm-method median --pdf-report`
+
+The gene-specific positive selection score in output file `TBEV.gene_summary.txt` was used to identify gene hits (see the manuscript).
+
+#### Demo dataset
+
+A sample dataset with FASTQ files containing 10,000 reads can be downloaded here.
+
+
 
 
 
