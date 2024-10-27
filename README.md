@@ -56,13 +56,13 @@ Launch mageck test from Terminal to rank sgRNAs and genes based on the read coun
 
 `mageck test -k /Users/kartik/ncbi/crispr_screens_TBEV/TBEV/reoriented_reads/tbev_screen.count.txt -t 2,3 -c 0,1 -n TBEV --norm-method median --pdf-report`
 
-The gene-specific positive selection score in output file `TBEV.gene_summary.txt` was used to identify gene hits (see the manuscript).
+The gene-specific positive selection score in output file `TBEV.gene_summary.txt` was used to identify gense hits (see the manuscript).
 
 #### Demo dataset
 
-A sample dataset with gzipped FASTQ files containing 10,000 reads can be downloaded [here](https://github.com/chandranlab/mittler_2024/tree/main/demo_fastq_files).
+A sample dataset for testing the bash script (gzipped FASTQ R1 and R2 files containing 10,000 reads) can be downloaded [here](https://github.com/chandranlab/mittler_2024/tree/main/demo_fastq_files).
 
-A raw CRISPR/Cas9 screen dataset from [Kulsuptrakul et al.](https://doi.org/10.1016/j.celrep.2021.108859) was used for testing the bash --> mageck analysis pipeline and is available for download on [EBI ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-8646). 
+A raw CRISPR/Cas9 screen dataset from [Kulsuptrakul et al.](https://doi.org/10.1016/j.celrep.2021.108859) was used for testing the mageck subcommands and is available for download on [EBI ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-8646). 
 
 
 
