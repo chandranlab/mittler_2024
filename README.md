@@ -62,7 +62,7 @@ The gene-specific positive selection score in output file `TBEV.gene_summary.txt
 
 A sample dataset with gzipped FASTQ files containing 10,000 reads can be downloaded [here](https://github.com/chandranlab/mittler_2024/tree/main/demo_fastq_files).
 
-A raw CRISPR/Cas9 screen dataset from [Kulsuptrakul et al.] (10.1101/2019.12.15.877100) was used for testing the bash --> mageck analysis pipeline and is available for download on [EBI ArrayExpress] (https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-8646). 
+A raw CRISPR/Cas9 screen dataset from [Kulsuptrakul et al.] (10.1101/2019.12.15.877100) was used for testing the bash --> mageck analysis pipeline and is available for download on [EBI ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-8646). 
 
 
 
