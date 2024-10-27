@@ -56,7 +56,7 @@ Launch mageck test from Terminal to rank sgRNAs and genes based on the read coun
 
 `mageck test -k /Users/kartik/ncbi/crispr_screens_TBEV/TBEV/reoriented_reads/tbev_screen.count.txt -t 2,3 -c 0,1 -n TBEV --norm-method median --pdf-report`
 
-The gene-specific positive selection score in output file `TBEV.gene_summary.txt` was used to identify gense hits (see the manuscript).
+The gene-specific positive selection score in output file `TBEV.gene_summary.txt` was used to identify gene hits (see the manuscript).
 
 #### Demo dataset
 
