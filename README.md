@@ -76,7 +76,7 @@ A raw CRISPR/Cas9 screen dataset from [Kulsuptrakul et al.](https://doi.org/10.1
 - CellProfiler v4.2.6 (available [here](https://cellprofiler.org/))
 
 #### Data acquisition
-Experiments to detect and measure TBEV attachment and internalization into A549 cells was performed, cells were fluorescently labeled for plasma membrane glycans (wheat germ aggluttinin (WGA)), TBEV glycoprotein E, and nuclei. 
+Experiments to detect and measure TBEV attachment and internalization into A549 cells was performed. Cells were fluorescently labeled for plasma membrane glycans (wheat germ aggluttinin (WGA)), TBEV glycoprotein E, and nuclei. 
 
 Cells were visualized by confocal microscopy, and fields containing cells were captured in three fluorescent channels: WGA - red, E - green, nuclei - blue. 
 
