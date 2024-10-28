@@ -45,7 +45,9 @@ See [mageck count](https://sourceforge.net/p/mageck/wiki/usage/#count) for docum
 
 Launch mageck count from Terminal command line to determine sgRNA readcounts in each fileset as follows:
 
-`mageck count -l /Users/kartik/ncbi/crispr_screens_TBEV/TBEV/Human_GeCKOv2_Library_combine.csv --fastq control_rep1_reoriented_R1.fastq control_rep2_reoriented_R1.fastq TBEV_rep1_reoriented_R1.fastq TBEV_rep2_reoriented_R1.fastq --norm-method median -n tbev_screen --unmapped-to-file --sample-label control1,control2,tbev1,tbev2`
+`mageck count -l Human_GeCKOv2_Library_combine.csv --fastq control_rep1_reoriented_R1.fastq control_rep2_reoriented_R1.fastq TBEV_rep1_reoriented_R1.fastq TBEV_rep2_reoriented_R1.fastq --norm-method median -n tbev_screen --unmapped-to-file --sample-label control1,control2,tbev1,tbev2`
+
+Library file containing Gecko-v2 sgRNA sequences is available [here](https://github.com/chandranlab/mittler_2024/blob/main/Human_GeCKOv2_Library_combine.csv).
 
 Output file `tbev_screen.count.txt` containing sgRNA readcounts for each sample is used as input for `mageck test`.
 
@@ -54,7 +56,7 @@ See [mageck test](https://sourceforge.net/p/mageck/wiki/usage/#test) for documen
 
 Launch mageck test from Terminal to rank sgRNAs and genes based on the read count table provided:
 
-`mageck test -k /Users/kartik/ncbi/crispr_screens_TBEV/TBEV/reoriented_reads/tbev_screen.count.txt -t 2,3 -c 0,1 -n TBEV --norm-method median --pdf-report`
+`mageck test -k tbev_screen.count.txt -t 2,3 -c 0,1 -n TBEV --norm-method median --pdf-report`
 
 The gene-specific positive selection score in output file `TBEV.gene_summary.txt` was used to identify gene hits (see the manuscript).
 
@@ -64,7 +66,33 @@ A sample dataset for testing the bash script (gzipped FASTQ R1 and R2 files cont
 
 A raw CRISPR/Cas9 screen dataset from [Kulsuptrakul et al.](https://doi.org/10.1016/j.celrep.2021.108859) was used for testing the mageck subcommands and is available for download on [EBI ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-8646). 
 
+---
 
+### B. CellProfiler analysis of immunofluorescence microscopy images
+
+#### Hardware, operating systen, software
+- Mac (arm64)
+- Mac OS v14.6.1 (Sonoma)
+- CellProfiler v4.2.6 (available [here](https://cellprofiler.org/))
+
+#### Data acquisition
+Experiments to detect and measure TBEV attachment and internalization into A549 cells was performed. Cells were fluorescently labeled for plasma membrane glycans (wheat germ aggluttinin (WGA)), TBEV glycoprotein E, and nuclei. 
+
+Cells were visualized by confocal microscopy, and fields containing cells were captured in three fluorescent channels: WGA - red, E - green, nuclei - blue. 
+
+See Mittler et al. for details.
+
+#### CellProfiler analysis
+
+See the [Cellprofiler website](https://cellprofiler.org/) for documentation.
+
+The custom CellProfiler pipeline used in this study is available [here](https://github.com/chandranlab/mittler_2024/blob/main/cell_fluorescent_puncta_count.cpproj).
+
+A sample image (Nikon nd2 format) to test the pipeline is available [here](https://github.com/chandranlab/mittler_2024/blob/main/sample_image.nd2). The image contains the three fluorescent channels above.
+
+Cells were segmented according to nuclei (primary objects) and WGA (secondary objects).
+
+Cell-associated fluorescent E puncta were segmented as primary objects, enumerated, and assigned as child objects to Cells.
 
 
 
