@@ -11,21 +11,21 @@
 - mageck v0.5.9.5 (available [here](https://sourceforge.net/p/mageck/wiki/Home/))
   
 #### Data acquisition
-A genome-scale CRISPR/Cas9 cell-survival screen for tick-borne encephalitis virus (TBEV) dependency factors was performed as described in Mittler et al.
+A genome-scale CRISPR/Cas9 cell-survival screen for virus dependency factors was performed as described in Mittler et al.
 
-A549 cells transduced with a lentiviral pool encoding the [Gecko-v2 CRISPR/Cas9-based gene inactivation library](https://www.addgene.org/pooled-library/zhang-human-gecko-v2/) were either left untreated or exposed to TBEV. The surviving cells were expanded and their genomic DNA was isolated. Experiments were performed in biological duplicate to yield 4 samples (control-rep1, TBEV-rep1, control-rep2, TBEV-rep2). 
+A549 cells transduced with a lentiviral pool encoding the [Gecko-v2 CRISPR/Cas9-based gene inactivation library](https://www.addgene.org/pooled-library/zhang-human-gecko-v2/) were either left untreated or exposed to virus. The surviving cells were expanded and their genomic DNA was isolated. Experiments were performed in biological duplicate to yield 4 samples (control-rep1, virus-rep1, control-rep2, virus-rep2). 
 
 Amplicons containing single-guide RNA (sgRNA) sequences were prepared from the genomic gDNA and ligated to Illumina adapters. Libraries were pooled and sequenced on the Illumina NextSeq 500 (2x150 bp, paired-end mode). FASTQ files were demultiplexed and processed to remove technical adapter sequences.
 
 #### Input data files
 1. control-rep1_R1.fastq
 2. control-rep1_R2.fastq
-3. tbev-rep1_R1.fastq
-4. tbev-rep1_R2.fastq
+3. virus-rep1_R1.fastq
+4. virus-rep1_R2.fastq
 5. control-rep2_R1.fastq
 6. control-rep2_R2.fastq
-7. tbev-rep2_R1.fastq
-8. tbev-rep2_R2.fastq
+7. virus-rep2_R1.fastq
+8. virus-rep2_R2.fastq
 
 rep = replicate, 
 R1 = P7 read, 
@@ -45,20 +45,20 @@ See [mageck count](https://sourceforge.net/p/mageck/wiki/usage/#count) for docum
 
 Launch mageck count from Terminal command line to determine sgRNA readcounts in each fileset as follows:
 
-`mageck count -l Human_GeCKOv2_Library_combine.csv --fastq control_rep1_reoriented_R1.fastq control_rep2_reoriented_R1.fastq TBEV_rep1_reoriented_R1.fastq TBEV_rep2_reoriented_R1.fastq --norm-method median -n tbev_screen --unmapped-to-file --sample-label control1,control2,tbev1,tbev2`
+`mageck count -l Human_GeCKOv2_Library_combine.csv --fastq control_rep1_reoriented_R1.fastq control_rep2_reoriented_R1.fastq virus_rep1_reoriented_R1.fastq virus_rep2_reoriented_R1.fastq --norm-method median -n virus_screen --unmapped-to-file --sample-label control1,control2,virus1,virus2`
 
 Library file containing Gecko-v2 sgRNA sequences is available [here](https://github.com/chandranlab/mittler_2024/blob/main/Human_GeCKOv2_Library_combine.csv).
 
-Output file `tbev_screen.count.txt` containing sgRNA readcounts for each sample is used as input for `mageck test`.
+Output file `virus_screen.count.txt` containing sgRNA readcounts for each sample is used as input for `mageck test`.
 
 #### Running `mageck test`
 See [mageck test](https://sourceforge.net/p/mageck/wiki/usage/#test) for documentation. 
 
 Launch mageck test from Terminal to rank sgRNAs and genes based on the read count table provided:
 
-`mageck test -k tbev_screen.count.txt -t 2,3 -c 0,1 -n TBEV --norm-method median --pdf-report`
+`mageck test -k virus_screen.count.txt -t 2,3 -c 0,1 -n virus --norm-method median --pdf-report`
 
-The gene-specific positive selection score in output file `TBEV.gene_summary.txt` was used to identify gene hits (see the manuscript).
+The gene-specific positive selection score in output file `virus.gene_summary.txt` was used to identify gene hits (see the manuscript).
 
 #### Demo dataset
 
@@ -76,7 +76,7 @@ A raw CRISPR/Cas9 screen dataset from [Kulsuptrakul et al.](https://doi.org/10.1
 - CellProfiler v4.2.6 (available [here](https://cellprofiler.org/))
 
 #### Data acquisition
-Experiments to detect and measure TBEV attachment and internalization into A549 cells was performed. Cells were fluorescently labeled for plasma membrane glycans (wheat germ aggluttinin (WGA)), TBEV glycoprotein E, and nuclei. 
+Experiments to detect and measure virus attachment and internalization into A549 cells was performed. Cells were fluorescently labeled for plasma membrane glycans (wheat germ aggluttinin (WGA)), virus glycoprotein E, and nuclei. 
 
 Cells were visualized by confocal microscopy, and fields containing cells were captured in three fluorescent channels: WGA - red, E - green, nuclei - blue. 
 
