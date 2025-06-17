@@ -93,6 +93,11 @@ A sample image (Nikon nd2 format) to test the pipeline is available [here](https
 Cells were segmented according to nuclei (primary objects) and WGA (secondary objects).
 Cell-associated fluorescent E puncta were segmented as primary objects, enumerated, and assigned as child objects to Cells.
 
-[[Neural progenitor cells | CD140a/PDGFRa positive cells]
+[Neural progenitor cells | nestin-positive cells](https://github.com/chandranlab/mittler_2024/blob/main/cellprofiler_pipelines/analysing_NPC_nestin_positive_cells_exclude_dying_cells.cpproj)
+[Neural progenitor cells | sox2-positive cells](https://github.com/chandranlab/mittler_2024/blob/main/cellprofiler_pipelines/analysing_NPC_sox2%20positive_exclude_dying_cells.cpproj)
+[Neural progenitor cells | CD140a/PDGFRa-positive cells](https://github.com/chandranlab/mittler_2024/blob/main/cellprofiler_pipelines/analysing_NPC_cd140a_PDGFRa_positive_cells.cpproj)
+[Neural progenitor cells | olig2-positive cells](https://github.com/chandranlab/mittler_2024/blob/main/cellprofiler_pipelines/analysing_NPC_olig2_positive_cells.cpproj)
 
-
+[Neural cultures | tubb3_receptor_coloc](https://github.com/chandranlab/mittler_2024/blob/main/cellprofiler_pipelines/analysing_60day_neural_cells_express_tubb3_receptor.cpproj)
+[Neural cultures | gfap_receptor_coloc](https://github.com/chandranlab/mittler_2024/blob/main/cellprofiler_pipelines/analysing_60day_neural_cells_express_gfap_lrp8.cpproj)
+[Neural cultures | virus_infected](https://github.com/chandranlab/mittler_2024/blob/main/cellprofiler_pipelines/analysing_60day_neural_cells_virus_infected_updated.cpproj)
