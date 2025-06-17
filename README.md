@@ -103,6 +103,6 @@ Cell-associated fluorescent E puncta were segmented as primary objects, enumerat
 
 [Neural cultures | tubb3_receptor_coloc](https://github.com/chandranlab/mittler_2024/blob/main/cellprofiler_pipelines/analysing_60day_neural_cells_express_tubb3_receptor.cpproj)
 
-[Neural cultures | gfap_receptor_coloc](https://github.com/chandranlab/mittler_2024/blob/main/cellprofiler_pipelines/analysing_60day_neural_cells_express_gfap_lrp8.cpproj)
+[Neural cultures | gfap_receptor_coloc](https://github.com/chandranlab/mittler_2024/blob/main/cellprofiler_pipelines/analysing_60day_neural_cells_express_gfap_receptor.cpproj)
 
 [Neural cultures | virus_infected](https://github.com/chandranlab/mittler_2024/blob/main/cellprofiler_pipelines/analysing_60day_neural_cells_virus_infected_updated.cpproj)
