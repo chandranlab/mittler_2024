@@ -93,5 +93,6 @@ A sample image (Nikon nd2 format) to test the pipeline is available [here](https
 Cells were segmented according to nuclei (primary objects) and WGA (secondary objects).
 Cell-associated fluorescent E puncta were segmented as primary objects, enumerated, and assigned as child objects to Cells.
 
+[[Neural progenitor cells | CD140a/PDGFRa positive cells]
 
 
