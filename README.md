@@ -88,7 +88,7 @@ See the [Cellprofiler website](https://cellprofiler.org/) for documentation.
 
 The following custom CellProfiler pipelines used in this study are available:
 
-[Enumerating cell fluorescent puncta](https://github.com/chandranlab/mittler_2024/blob/main/cell_fluorescent_puncta_count.cpproj).
+[Enumerating cell fluorescent puncta](https://github.com/chandranlab/mittler_2024/blob/main/cellprofiler_pipelines/cell_fluorescent_puncta_count.cpproj).
 A sample image (Nikon nd2 format) to test the pipeline is available [here](https://github.com/chandranlab/mittler_2024/blob/main/sample_image.nd2). The image contains the three fluorescent channels above.
 Cells were segmented according to nuclei (primary objects) and WGA (secondary objects).
 Cell-associated fluorescent E puncta were segmented as primary objects, enumerated, and assigned as child objects to Cells.
